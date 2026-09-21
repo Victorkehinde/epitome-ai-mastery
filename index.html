@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epitome AI Mastery — Build Your Own AI Team in 3 Evenings | Victor Kehinde</title>
+<meta name="description" content="A 3-evening live masterclass with Victor Kehinde, 16–18 October 2026. Build a working AI agent for your business — no code, no developer. Founding cohort now open.">
+<style>
+  :root{
+    --navy:#0A1628; --navy-2:#0D1B2A; --deep:#06101F; --navy-3:#14243C;
+    --yellow:#F5B301; --yellow-soft:#FFF6DC;
+    --ink:#0F172A; --muted:#5A6472; --line:#E4E8EF;
+    --white:#FFFFFF; --off:#F7F8FA; --green:#15803D; --red:#DC2626;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+  h1{font-size:clamp(2rem,5.2vw,3.6rem);font-weight:700}
+  h2{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:700}
+  h3{font-size:1.16rem;font-weight:700;font-family:var(--sans)}
+  p{margin:0 0 1.05em}
+  a{color:inherit}
+  .label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--yellow)}
+  .label-dark{color:#8A6A00}
+  .u{border-bottom:3px solid var(--yellow);text-decoration:none;font-weight:700}
+  .u-red{border-bottom:2px solid var(--red);text-decoration:none;font-weight:700}
+  .u-green{border-bottom:2px solid var(--green);text-decoration:none;font-weight:700}
+  section{padding:64px 0}
+  .center{text-align:center}
+  .narrow{max-width:760px;margin:0 auto}
+
+  .alert{background:var(--yellow);color:var(--deep);text-align:center;padding:11px 16px;font-weight:700;font-size:.82rem;letter-spacing:.06em}
+  .alert span{display:inline-block;margin:0 7px}
+
+  header{background:var(--navy);color:#fff;padding:16px 0;position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(255,255,255,.08)}
+  .hrow{display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.02em}
+  .mark{width:38px;height:38px;border-radius:9px;background:var(--yellow);color:var(--deep);display:grid;place-items:center;font-family:var(--serif);font-size:1.15rem;font-weight:700}
+  nav{display:flex;gap:24px;font-size:.9rem;opacity:.85}
+  nav a{text-decoration:none}
+  nav a:hover{color:var(--yellow)}
+  .btn{display:inline-block;background:var(--yellow);color:var(--deep);font-weight:700;padding:14px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-size:.95rem;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(245,179,1,.32)}
+  .btn-sm{padding:11px 20px;font-size:.86rem}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .btn-ghost:hover{border-color:var(--yellow);color:var(--yellow);box-shadow:none}
+
+  .hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 62%,var(--deep) 100%);color:#fff;padding:70px 0 74px}
+  .hero .who{display:flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+  .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(140deg,var(--yellow),#C99200);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--deep);font-size:1.3rem;flex:none}
+  .who b{display:block;font-size:.98rem}
+  .who small{opacity:.72;font-size:.82rem}
+  .hero h1{color:#fff}
+  .hero .sub{font-size:clamp(1.02rem,2vw,1.2rem);opacity:.9;max-width:660px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .trustline{margin-top:26px;font-size:.84rem;opacity:.7;display:flex;gap:20px;flex-wrap:wrap}
+
+  .promise{background:var(--yellow-soft);border-left:5px solid var(--yellow);padding:24px 26px;border-radius:0 10px 10px 0;font-size:1.06rem}
+
+  .money{background:var(--off);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .money .mh{background:var(--navy);color:#fff;padding:15px 24px;font-weight:700;font-size:.94rem}
+  .mtable{width:100%;border-collapse:collapse;font-size:.95rem}
+  .mtable td{padding:14px 24px;border-bottom:1px solid var(--line)}
+  .mtable tr:last-child td{border-bottom:0}
+  .mtable td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+  .strike{text-decoration:line-through;color:var(--muted);font-weight:400}
+  .saved{background:var(--yellow);color:var(--deep);padding:16px 24px;font-weight:700}
+
+  .count{display:flex;gap:12px;justify-content:center;margin:26px 0 18px;flex-wrap:wrap}
+  .cbox{background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;min-width:78px;text-align:center}
+  .cbox b{display:block;font-size:1.75rem;font-family:var(--serif);color:var(--yellow)}
+  .cbox small{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+  .scarcity{background:#fff;border:1.5px dashed var(--red);border-radius:10px;padding:16px 20px;font-size:.94rem;max-width:620px;margin:0 auto}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff}
+  .card h3{margin-bottom:14px;font-size:1.02rem}
+  .card ul{list-style:none;padding:0;margin:0}
+  .card li{padding:9px 0 9px 30px;position:relative;font-size:.94rem;border-bottom:1px dashed var(--line)}
+  .card li:last-child{border-bottom:0}
+  .card li:before{position:absolute;left:0;top:8px;font-weight:700}
+  .bad li:before{content:"✕";color:var(--red)}
+  .good{border-color:var(--navy);box-shadow:0 14px 34px rgba(10,22,40,.09)}
+  .good li:before{content:"✓";color:var(--green)}
+  .tag{display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+  .tag-bad{background:#FEE2E2;color:#991B1B}
+  .tag-good{background:var(--yellow);color:var(--deep)}
+
+  .dark{background:var(--navy);color:#fff}
+  .dark h2,.dark h3{color:#fff}
+  .days{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .day{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:26px}
+  .day .dnum{font-family:var(--serif);font-size:2rem;color:var(--yellow);line-height:1}
+  .day h3{margin:12px 0 6px}
+  .day p{font-size:.92rem;opacity:.85;margin:0}
+  .day ul{margin:14px 0 0;padding-left:18px;font-size:.88rem;opacity:.82}
+  .day li{margin-bottom:6px}
+  .cashmob{background:var(--yellow);color:var(--deep);border-radius:14px;padding:26px;margin-top:20px}
+  .cashmob h3{margin-bottom:8px;color:var(--deep)}
+
+  .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+  .d{background:var(--off);border:1px solid var(--line);border-radius:13px;padding:22px}
+  .d .ic{font-size:1.5rem;margin-bottom:8px}
+  .d h3{font-size:.99rem;margin-bottom:6px}
+  .d p{font-size:.9rem;color:var(--muted);margin:0}
+
+  .qual{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+
+  .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:30px 0 44px;text-align:center}
+  .proof div b{display:block;font-family:var(--serif);font-size:2.1rem;color:var(--navy)}
+  .proof div small{font-size:.82rem;color:var(--muted)}
+  .charter{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:10px;text-align:left}
+  .charter .c{background:#fff;border:1px solid var(--line);border-top:4px solid var(--yellow);border-radius:12px;padding:24px}
+  .charter .c h3{font-size:1rem;margin-bottom:8px}
+  .charter .c p{font-size:.92rem;color:var(--muted);margin:0}
+  .honest{background:var(--off);border:1px solid var(--line);border-radius:12px;padding:22px 24px;max-width:760px;margin:28px auto 0;font-size:.95rem}
+
+  .stack{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:640px;margin:0 auto 38px}
+  .stack div{display:flex;justify-content:space-between;padding:13px 22px;border-bottom:1px solid var(--line);font-size:.93rem}
+  .stack div:last-child{border-bottom:0}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+  .tier{border:1.5px solid var(--line);border-radius:15px;padding:28px;background:#fff;position:relative}
+  .tier.pop{border-color:var(--yellow);border-width:2px;box-shadow:0 18px 44px rgba(10,22,40,.11);transform:translateY(-6px)}
+  .pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--yellow);color:var(--deep);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:999px;white-space:nowrap}
+  .tier h3{font-size:1.02rem;margin-bottom:4px}
+  .tier .amt{font-family:var(--serif);font-size:2.15rem;font-weight:700;margin:10px 0 2px}
+  .tier .was{font-size:.85rem;color:var(--muted);text-decoration:line-through}
+  .tier ul{list-style:none;padding:0;margin:18px 0 22px;font-size:.9rem}
+  .tier li{padding:7px 0 7px 24px;position:relative;border-bottom:1px dashed var(--line)}
+  .tier li:last-child{border-bottom:0}
+  .tier li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+  .tier .btn{width:100%;text-align:center}
+  .risenote{font-size:.86rem;color:var(--muted);text-align:center;margin-top:16px}
+
+  .pay{background:var(--navy);color:#fff;border-radius:16px;padding:34px;max-width:720px;margin:52px auto 0}
+  .pay h3{color:#fff;margin-bottom:6px}
+  .pay p{color:rgba(255,255,255,.82);font-size:.94rem}
+  .payrows{margin:20px 0 6px}
+  .payrow{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.95rem}
+  .payrow span:first-child{opacity:.7}
+  .payrow span:last-child{font-weight:700;color:var(--yellow);text-align:right}
+  .paysteps{counter-reset:ps;list-style:none;padding:0;margin:18px 0 0;font-size:.92rem;color:rgba(255,255,255,.85)}
+  .paysteps li{counter-increment:ps;padding:8px 0 8px 34px;position:relative}
+  .paysteps li:before{content:counter(ps);position:absolute;left:0;top:7px;width:22px;height:22px;border-radius:50%;background:var(--yellow);color:var(--deep);display:grid;place-items:center;font-weight:700;font-size:.76rem}
+
+  details{border-bottom:1px solid var(--line);padding:16px 0}
+  summary{cursor:pointer;font-weight:700;font-size:1rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--yellow);font-weight:700;font-size:1.3rem;line-height:1}
+  details[open] summary:after{content:"–"}
+  details p{margin:12px 0 0;font-size:.94rem;color:var(--muted)}
+
+  .close{background:var(--deep);color:#fff;text-align:center}
+  .close h2{color:#fff;font-size:clamp(1.8rem,4.4vw,3rem)}
+  footer{background:var(--navy);color:#fff;padding:46px 0 34px;font-size:.84rem}
+  footer a{color:var(--yellow);text-decoration:none}
+  .fine{opacity:.62;font-size:.76rem;line-height:1.7;margin-top:22px}
+  .stickybar{position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#fff;padding:11px 18px;display:none;align-items:center;justify-content:space-between;gap:14px;z-index:70;border-top:1px solid rgba(255,255,255,.12)}
+  .stickybar.show{display:flex}
+  .stickybar span{font-size:.85rem}
+  @media(max-width:860px){
+    .two,.qual,.tiers,.days,.grid6,.charter{grid-template-columns:1fr}
+    .proof{grid-template-columns:repeat(2,1fr)}
+    nav{display:none}
+    .tier.pop{transform:none}
+    section{padding:48px 0}
+    .pay{padding:24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="alert">
+  <span>● LIVE 3-EVENING MASTERCLASS</span><span>·</span><span>16–18 OCTOBER 2026</span><span>·</span><span>8:00 PM WAT</span><span>·</span><span>FOUNDING COHORT OPEN</span>
+</div>
+
+<header>
+  <div class="wrap hrow">
+    <div class="brand"><span class="mark">E</span><span>EPITOME · AI MASTERY</span></div>
+    <nav>
+      <a href="#gap">The Gap</a>
+      <a href="#plan">Curriculum</a>
+      <a href="#proof">Proof</a>
+      <a href="#price">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="#price">Reserve my seat</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="who">
+      <div class="avatar">VK</div>
+      <div>
+        <b>Victor Kehinde</b>
+        <small>Founder &amp; CEO, Epitome Innovations Global Resources (RC 2749585)</small>
+      </div>
+    </div>
+    <p class="label">AI Agents · Automation · Mastery</p>
+    <h1>Stop <span class="u">using</span> AI.<br>Start <span class="u">owning</span> an AI team.</h1>
+    <p class="sub">In three live evenings, build a working AI agent for your own business — no code, no developer, no guesswork. Taught by the man whose agency runs on the exact same stack he'll hand you.</p>
+    <div class="cta-row">
+      <a class="btn" href="#price">Reserve my seat →</a>
+      <a class="btn btn-ghost" href="#plan">See what you'll build</a>
+    </div>
+    <div class="trustline">
+      <span>✓ 16–18 October 2026 · 8PM WAT</span>
+      <span>✓ Registered company — RC 2749585</span>
+      <span>✓ Replay access included</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section>
+  <div class="wrap narrow">
+    <div class="promise">
+      <b>Here's what nobody tells you about AI agents:</b> the gap isn't intelligence — it's <b>ownership</b>. Thousands of business owners are chatting with AI every day and still doing all the work themselves. By the end of this masterclass, you will have <b>built and deployed at least one working AI agent</b> for your business — and you'll know exactly how to build the next one.
+    </div>
+  </div>
+</section>
+
+<!-- MONEY BAR -->
+<section style="background:var(--white);padding-top:0">
+  <div class="wrap narrow">
+    <p class="label label-dark center">The honest arithmetic</p>
+    <h2 class="center">The roles you're paying for right now</h2>
+    <p class="center" style="color:var(--muted)">Typical monthly cost of the work an AI agent can absorb. Market rates — they vary by city and experience.</p>
+    <div class="money" style="margin-top:26px">
+      <div class="mh">What these roles typically cost a small Nigerian business</div>
+      <table class="mtable">
+        <tr><td>Social media manager <span style="color:var(--muted);font-size:.85rem">— posting, captions, scheduling</span></td><td class="strike">₦120,000/mo</td></tr>
+        <tr><td>Community / support manager <span style="color:var(--muted);font-size:.85rem">— DMs, enquiries, FAQs</span></td><td class="strike">₦100,000/mo</td></tr>
+        <tr><td>Follow-up / front desk <span style="color:var(--muted);font-size:.85rem">— chasing leads and bookings</span></td><td class="strike">₦90,000/mo</td></tr>
+        <tr><td>Basic admin <span style="color:var(--muted);font-size:.85rem">— receipts, records, reminders</span></td><td class="strike">₦80,000/mo</td></tr>
+      </table>
+      <div class="saved">≈ ₦390,000 every month — before you've counted the mistakes, the sick days and the churn.</div>
+    </div>
+    <p class="center" style="margin-top:20px;color:var(--muted);font-size:.94rem">You are not necessarily going to fire anybody. But you should know what the work is <em>actually</em> costing you — and what it costs once an agent carries it.</p>
+  </div>
+</section>
+
+<!-- SCARCITY + COUNTDOWN -->
+<section style="background:var(--off)">
+  <div class="wrap narrow center">
+    <p class="label label-dark">Founding cohort</p>
+    <h2>Live: 16, 17 &amp; 18 October 2026</h2>
+    <p style="color:var(--muted)">Three evenings. 8:00 PM WAT each night. The doors close when the masterclass begins.</p>
+    <div class="count" id="count">
+      <div class="cbox"><b id="d">--</b><small>Days</small></div>
+      <div class="cbox"><b id="h">--</b><small>Hours</small></div>
+      <div class="cbox"><b id="m">--</b><small>Minutes</small></div>
+      <div class="cbox"><b id="s">--</b><small>Seconds</small></div>
+    </div>
+    <div class="scarcity">
+      <b>Founding cohort pricing closes at seat 50.</b> After that the price rises to the standard rate and stays there. This is a real, enforced deadline — not a countdown we reset next week.
+    </div>
+    <div class="cta-row" style="justify-content:center;margin-top:26px">
+      <a class="btn" href="#price">Lock in founding pricing →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 01: THE GAP -->
+<section id="gap">
+  <div class="wrap narrow">
+    <p class="label label-dark">Phase 01 — The Gap</p>
+    <h2>Everyone is talking about AI. Almost nobody has one <span class="u-red">working</span>.</h2>
+    <p>Look around your own business for a moment. You've probably done at least one of these:</p>
+    <ul style="line-height:2">
+      <li>Watched hours of YouTube tutorials and closed the laptop with nothing running.</li>
+      <li>Paid for a tool, used it twice, and gone back to doing it yourself.</li>
+      <li>Asked ChatGPT to "write a post", copy-pasted it, and called that automation.</li>
+      <li>Hired somebody to handle the messages — and still ended up answering them yourself at 11pm.</li>
+    </ul>
+    <p style="margin-top:20px">None of that is embarrassing. It's what happens when nobody shows you the <b>difference between talking to AI and owning an AI worker</b>. That difference is the entire masterclass.</p>
+  </div>
+</section>
+
+<!-- THE DISTINCTION -->
+<section style="background:var(--off)">
+  <div class="wrap">
+    <div class="narrow">
+      <p class="label label-dark">The core distinction</p>
+      <h2>Using AI vs. Owning an AI Team</h2>
+      <p style="color:var(--muted)">These are two completely different businesses. Only one of them stops needing you.</p>
+    </div>
+    <div class="two">
+      <div class="card bad">
+        <span class="tag tag-bad">Where most people are stuck</span>
+        <h3>Talking to AI</h3>
+        <ul>
+          <li>You open a chat window every single time</li>
+          <li>You copy, paste and rewrite by hand</li>
+          <li>Nothing runs unless you're there</li>
+          <li>No memory, no follow-up, no records</li>
+          <li>You're the bottleneck in your own business</li>
+          <li>Zero resale value — you can't sell a chat habit</li>
+        </ul>
+      </div>
+      <div class="card good">
+        <span class="tag tag-good">Where you'll be in 3 evenings</span>
+        <h3>Owning an AI team</h3>
+        <ul>
+          <li>Agents that run on a trigger — without you</li>
+          <li>Leads answered in minutes, at 2am, automatically</li>
+          <li>Your tools wired together into one workflow</li>
+          <li>Every enquiry logged where you can see it</li>
+          <li>You build once; it works every day after</li>
+          <li>A service you can <b>charge other businesses for</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 02: THE PLAN -->
+<section class="dark" id="plan">
+  <div class="wrap">
+    <div class="narrow center">
+      <p class="label">Phase 02 — The Plan</p>
+      <h2>Three evenings. Three transformations.</h2>
+      <p style="opacity:.85">Live, hands-on, and built around <em>your</em> business — not a demo business. Bring a laptop and a real problem.</p>
+      <p style="color:var(--yellow);font-weight:700;margin:0">16, 17 &amp; 18 October 2026 · 8:00 PM WAT</p>
+    </div>
+    <div class="days">
+      <div class="day">
+        <div class="dnum">01</div>
+        <h3>Build your first agent</h3>
+        <p>From a blank screen to a working agent — tonight.</p>
+        <ul>
+          <li>What an agent actually is (and isn't)</li>
+          <li>The 5 parts every agent needs</li>
+          <li>Writing instructions that behave, not ramble</li>
+          <li>Your agent built and tested live</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="dnum">02</div>
+        <h3>Give it a job</h3>
+        <p>Wiring your agent into the work you already do.</p>
+        <ul>
+          <li>Connecting WhatsApp, email and forms</li>
+          <li>Multi-step workflows that don't break</li>
+          <li>Lead follow-up and booking flows</li>
+          <li>Making it hand off to you cleanly</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="dnum">03</div>
+        <h3>Make it earn</h3>
+        <p>You build, I watch, we fix it together.</p>
+        <ul>
+          <li>Supervised build session on your own agent</li>
+          <li>Scaling from one agent to a team</li>
+          <li>Pricing and packaging it as a service</li>
+          <li>Your 30-day action plan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cashmob">
+      <span class="tag" style="background:var(--deep);color:var(--yellow)">And then</span>
+      <h3>How to turn this into income</h3>
+      <p style="margin:0;color:var(--deep)">Most attendees come to automate their own business. A good number leave with something more valuable: a skill other businesses will pay for. Agencies in Nigeria currently charge anywhere from <b>₦150,000 to ₦700,000</b> in setup and monthly retainers for exactly the work you'll learn — and there is far more demand than supply. Day 3 shows you how to price it and where to find your first client.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 03: DELIVERABLES -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="narrow center">
+      <p class="label label-dark">Phase 03 — The Outcome</p>
+      <h2>After 3 evenings, you will have…</h2>
+      <p style="color:var(--muted)">Not notes. Not inspiration. Things that exist and run.</p>
+    </div>
+    <div class="grid6">
+      <div class="d"><div class="ic">🤖</div><h3>A working agent</h3><p>Built, tested and running for your own business before the last evening ends.</p></div>
+      <div class="d"><div class="ic">🔗</div><h3>A workflow blueprint</h3><p>Your tools mapped into one flow — so the work happens without anyone remembering to do it.</p></div>
+      <div class="d"><div class="ic">💰</div><h3>A monetisation path</h3><p>How to package and price this as a service, with the exact words to use when you pitch it.</p></div>
+      <div class="d"><div class="ic">🧠</div><h3>The mental model</h3><p>You'll be able to look at any business process and see immediately whether an agent can carry it.</p></div>
+      <div class="d"><div class="ic">⏱️</div><h3>Hours back</h3><p>A practical plan for reclaiming the manual hours you currently lose every week.</p></div>
+      <div class="d"><div class="ic">🎯</div><h3>A skill with no queue</h3><p>Employers and business owners are asking for this. Very few people can actually deliver it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFIER -->
+<section style="background:var(--off)">
+  <div class="wrap">
+    <div class="narrow">
+      <p class="label label-dark">Read this before you register</p>
+      <h2>This is not for everybody</h2>
+      <p style="color:var(--muted)">Being honest about that has saved a lot of people ₦45,000 and three evenings.</p>
+    </div>
+    <div class="qual">
+      <div class="card good">
+        <span class="tag tag-good">This is for you if</span>
+        <ul>
+          <li>You run a business and you're <b>drowning in messages, follow-ups and admin</b></li>
+          <li>You've tried AI tools but nothing is actually <b>running on its own</b></li>
+          <li>You want a skill you can <b>charge other businesses for</b></li>
+          <li>You can give <b>three evenings</b> and show up with a laptop</li>
+          <li>You're willing to <b>build in public</b> and get your work corrected live</li>
+        </ul>
+      </div>
+      <div class="card bad">
+        <span class="tag tag-bad">This is not for you if</span>
+        <ul>
+          <li>You want a video library to buy and never open</li>
+          <li>You're looking for a <b>get-rich-quick</b> scheme — this is a skill, not a lottery</li>
+          <li>You won't touch a keyboard for three evenings</li>
+          <li>You expect an agent to fix a business with no offer and no customers</li>
+          <li>You want to stay anonymous — <b>we review your build live</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 04: PROOF -->
+<section id="proof">
+  <div class="wrap center">
+    <p class="label label-dark">Phase 04 — The Proof</p>
+    <h2>Who is teaching this</h2>
+    <p class="narrow" style="color:var(--muted)">Epitome Innovations is a registered Nigerian company, not a rented landing page. Everything taught here is running in our own business first.</p>
+    <div class="proof">
+      <div><b>RC 2749585</b><small>Registered company</small></div>
+      <div><b>8,600+</b><small>followers across our channels</small></div>
+      <div><b>55+</b><small>videos published</small></div>
+      <div><b>2</b><small>live sites built in-house</small></div>
+    </div>
+
+    <h3 style="margin-bottom:10px">The Founding Cohort</h3>
+    <p class="narrow" style="color:var(--muted);margin-bottom:26px">This is a new programme. Rather than fill this page with quotes we can't stand behind, here's what we're actually offering the first 50 people through the door.</p>
+    <div class="charter">
+      <div class="c">
+        <h3>Founding pricing, held</h3>
+        <p>Your rate is locked permanently. When the price rises after seat 50, it never rises for you — including on future courses.</p>
+      </div>
+      <div class="c">
+        <h3>More of my time</h3>
+        <p>A smaller room means your build gets reviewed properly. Founding members get priority on Day 3 supervised sessions.</p>
+      </div>
+      <div class="c">
+        <h3>We fix it or refund it</h3>
+        <p>Attend all three evenings, do the builds, and if you don't come away with a working agent, we make it right — up to a full refund of your seat.</p>
+      </div>
+    </div>
+    <div class="honest">
+      <b>Why there are no testimonials here yet.</b> Because the first cohort hasn't happened. We'd rather tell you that plainly than borrow somebody else's success stories. When our attendees build their agents, their words will appear here — in their words, with their permission.
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="price" style="background:var(--off)">
+  <div class="wrap">
+    <div class="narrow center">
+      <p class="label label-dark">Phase 05 — The Price</p>
+      <h2>Lock in founding pricing before seat 50</h2>
+      <p style="color:var(--muted)">One payment. Three live evenings. Replays included.</p>
+    </div>
+
+    <div class="stack">
+      <div><span>Live 3-evening masterclass with Victor Kehinde</span><span>₦150,000</span></div>
+      <div><span>Replay access — watch every session again</span><span>₦30,000</span></div>
+      <div><span>Agent templates &amp; instruction playbooks</span><span>₦40,000</span></div>
+      <div><span>Private cohort support group</span><span>₦25,000</span></div>
+      <div><span>Day 3 supervised build session</span><span>₦50,000</span></div>
+      <div style="background:var(--navy);color:#fff;font-weight:700"><span>Total real value</span><span style="color:var(--yellow)">₦295,000</span></div>
+    </div>
+
+    <div class="tiers">
+      <div class="tier">
+        <h3>The Masterclass</h3>
+        <p style="font-size:.88rem;color:var(--muted);margin:0">Live access, replays and the templates.</p>
+        <div class="amt">₦45,000</div>
+        <div class="was">standard ₦85,000</div>
+        <ul>
+          <li>3 live evenings, 8PM WAT</li>
+          <li>Replay access</li>
+          <li>Agent templates &amp; playbooks</li>
+          <li>Private cohort group</li>
+          <li>Day 3 supervised build</li>
+        </ul>
+        <a class="btn" href="#pay">Reserve a seat</a>
+      </div>
+
+      <div class="tier pop">
+        <span class="pop-badge">Best value</span>
+        <h3>The Mastery Bundle</h3>
+        <p style="font-size:.88rem;color:var(--muted);margin:0">Everything live, plus the full recorded library.</p>
+        <div class="amt">₦150,000</div>
+        <div class="was">standard ₦250,000</div>
+        <ul>
+          <li>Everything in The Masterclass</li>
+          <li><b>Full recorded course library</b> — keep it permanently</li>
+          <li>Advanced agent workflows module</li>
+          <li>Monetisation &amp; pricing module</li>
+          <li>Client-ready proposal templates</li>
+        </ul>
+        <a class="btn" href="#pay">Get the bundle</a>
+      </div>
+
+      <div class="tier">
+        <h3>Implementation Seat</h3>
+        <p style="font-size:.88rem;color:var(--muted);margin:0">Only 5 seats. I build with you, 1-on-1.</p>
+        <div class="amt">₦450,000</div>
+        <div class="was">by application</div>
+        <ul>
+          <li>Everything in The Mastery Bundle</li>
+          <li><b>3 × private 1-on-1 sessions</b> (90 mins each)</li>
+          <li>We build your first agent together</li>
+          <li>Direct line to me for 60 days</li>
+          <li>Review of your first client proposal</li>
+        </ul>
+        <a class="btn" href="#pay">Apply for a seat</a>
+      </div>
+    </div>
+    <p class="risenote">Founding pricing applies to the first 50 masterclass seats. Once they're gone, the standard rates above are the only rates.</p>
+
+    <!-- PAYMENT -->
+    <div class="pay" id="pay">
+      <span class="tag" style="background:var(--yellow);color:var(--deep)">How to pay</span>
+      <h3>Bank transfer — secure your seat</h3>
+      <p>We bank-transfer only for now. It's instant, there are no processing fees, and you get a human confirmation from us the same day.</p>
+      <div class="payrows">
+        <div class="payrow"><span>Bank</span><span>[BANK NAME]</span></div>
+        <div class="payrow"><span>Account name</span><span>Epitome Innovations Global Resources</span></div>
+        <div class="payrow"><span>Account number</span><span>[ACCOUNT NUMBER]</span></div>
+        <div class="payrow"><span>Amount — The Masterclass</span><span>₦45,000</span></div>
+        <div class="payrow"><span>Amount — The Mastery Bundle</span><span>₦150,000</span></div>
+        <div class="payrow"><span>Amount — Implementation Seat</span><span>₦450,000</span></div>
+      </div>
+      <ol class="paysteps">
+        <li>Transfer the amount for the tier you want, using your <b>full name</b> as the transfer narration.</li>
+        <li>Send your proof of payment to <b>tepimedia@gmail.com</b> — subject line: <b>AI MASTERY</b>.</li>
+        <li>You'll get your confirmation, your seat number, and the cohort group link the same day.</li>
+        <li>Seats are confirmed in the order payment lands. Seat 51 pays the standard rate.</li>
+      </ol>
+      <p style="margin:20px 0 0;font-size:.9rem;color:rgba(255,255,255,.7)">Questions before you pay? Email <a href="mailto:tepimedia@gmail.com?subject=AI%20Mastery%20question" style="color:var(--yellow)">tepimedia@gmail.com</a> and ask — we'd rather answer than have you guess.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap narrow">
+    <h2 class="center">Frequently asked questions</h2>
+    <div style="margin-top:26px">
+      <details open><summary>Do I need to know how to code?</summary>
+        <p>No. Everything is built with no-code tools and plain-English instructions. If you can write a WhatsApp message, you can build an agent. We do the technical wiring together, live.</p></details>
+      <details><summary>What do I need on the night?</summary>
+        <p>A laptop, a stable internet connection, and one real problem in your business you'd like off your plate. A phone is not enough for the build sessions.</p></details>
+      <details><summary>What are the exact dates and time?</summary>
+        <p><b>16, 17 and 18 October 2026</b>, starting <b>8:00 PM WAT</b> each evening. Attendance is live. Replays go out within 24 hours.</p></details>
+      <details><summary>How do I pay — and what do I get after I pay?</summary>
+        <p>Bank transfer. You'll find the account details in the payment section above. Send your proof of payment to tepimedia@gmail.com with <b>AI MASTERY</b> as the subject, and you'll receive your confirmation, seat number and cohort group link the same day.</p></details>
+      <details><summary>What if I miss an evening?</summary>
+        <p>You get the replay, usually within 24 hours. But the live sessions are where your build gets reviewed and corrected, so do your best to attend — especially Day 3.</p></details>
+      <details><summary>Why does the price go up?</summary>
+        <p>Because the first cohort does the most work: more live attention per person, a smaller group, and a lot of my time. Founding pricing reflects that. Once the first 50 seats are gone it moves to the standard rate and stays there.</p></details>
+      <details><summary>Can I use what I learn to serve other businesses?</summary>
+        <p>Yes — and a good number of people will. Day 3 covers exactly how to package, price and pitch this as a service. Businesses in Nigeria are already paying sizeable setup fees and retainers for this work.</p></details>
+      <details><summary>Is this the same as hiring your agency to do it for me?</summary>
+        <p>No — and both are valid. If you'd rather we just build and manage it for you, book a free automation audit and we'll do it end to end. The masterclass is for owners who want to <em>own the skill themselves</em>.</p></details>
+      <details><summary>What if I don't get value from it?</summary>
+        <p>Attend all three evenings, do the builds, and if you still haven't got a working agent, write to us and we'll make it right. What we can't do is refund a seat you never showed up to.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="wrap narrow">
+    <h2>Three evenings from now, you'll have either watched AI happen — or built something.</h2>
+    <p style="opacity:.86">16, 17 &amp; 18 October 2026 · 8:00 PM WAT. Same masterclass, same three evenings, same instructor. The only thing that changes after seat 50 is what you pay.</p>
+    <div class="cta-row" style="justify-content:center;margin-top:28px">
+      <a class="btn" href="#pay">Reserve my seat — ₦45,000 →</a>
+      <a class="btn btn-ghost" href="mailto:tepimedia@gmail.com?subject=AI%20Mastery%20question">Ask a question first</a>
+    </div>
+    <p style="margin-top:22px;font-size:.86rem;opacity:.7">Prefer we just do it for you? <a href="https://victorkehinde.github.io/epitome-ai-agency/" style="color:var(--yellow)">Book a free automation audit →</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand" style="margin-bottom:14px"><span class="mark">E</span><span>EPITOME · AI MASTERY</span></div>
+    <p style="margin:0 0 6px">A training division of <b>Epitome Innovations Global Resources</b> (RC 2749585).</p>
+    <p style="margin:0 0 6px">Contact: <a href="mailto:tepimedia@gmail.com">tepimedia@gmail.com</a></p>
+    <p style="margin:0 0 6px"><a href="https://victorkehinde.github.io/epitome-ai-agency/">Epitome AI Agency</a> · <a href="https://victorkehinde.github.io/epitome-innovations/">Epitome Innovations</a></p>
+    <p class="fine">
+      This is an independent training programme. We are not affiliated with, endorsed by or sponsored by Meta, Google, OpenAI, Anthropic or any other platform mentioned on this page. Results depend entirely on your own business, effort and implementation — nothing here is a promise of income. Salary figures are typical Nigerian market rates and vary by city, sector and experience. Prices are in Nigerian Naira and may change after the founding cohort closes. © 2026 Epitome Innovations Global Resources.
+    </p>
+  </div>
+</footer>
+
+<div class="stickybar" id="sbar">
+  <span><b>Founding cohort open</b> · ₦45,000 · first 50 seats</span>
+  <a class="btn btn-sm" href="#pay">Reserve</a>
+</div>
+
+<script>
+// live start date: 16 October 2026, 8:00 PM WAT (UTC+1)
+const START = new Date("2026-10-16T20:00:00+01:00").getTime();
+const pad = n => String(n).padStart(2, "0");
+function tick(){
+  const diff = START - Date.now();
+  if (diff <= 0){ ["d","h","m","s"].forEach(i => document.getElementById(i).textContent = "00"); return; }
+  document.getElementById("d").textContent = pad(Math.floor(diff/86400000));
+  document.getElementById("h").textContent = pad(Math.floor(diff%86400000/3600000));
+  document.getElementById("m").textContent = pad(Math.floor(diff%3600000/60000));
+  document.getElementById("s").textContent = pad(Math.floor(diff%60000/1000));
+}
+tick(); setInterval(tick, 1000);
+
+const bar = document.getElementById("sbar");
+addEventListener("scroll", () => { bar.classList.toggle("show", scrollY > 900); }, { passive: true });
+</script>
+</body>
+</html>
