@@ -119,6 +119,13 @@
   .charter .c h3{font-size:1rem;margin-bottom:8px}
   .charter .c p{font-size:.92rem;color:var(--muted);margin:0}
   .honest{background:var(--off);border:1px solid var(--line);border-radius:12px;padding:22px 24px;max-width:760px;margin:28px auto 0;font-size:.95rem}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:10px;text-align:left}
+  .quotes .q{background:#fff;border:1px solid var(--line);border-top:4px solid var(--yellow);border-radius:12px;padding:24px;display:flex;flex-direction:column}
+  .quotes .amt{font-family:var(--serif);font-size:1.7rem;line-height:1.1;color:var(--navy);display:block;margin-bottom:12px}
+  .quotes .q p{font-size:.92rem;color:#33415a;margin:0 0 18px;flex:1}
+  .quotes .q b{display:block;font-size:.95rem;color:var(--navy);margin-bottom:2px}
+  .quotes .q small{font-size:.8rem;color:var(--muted)}
+  .quotes .tag{font-family:var(--serif);font-size:1.05rem;color:var(--navy);display:block;margin-bottom:10px}
 
   .stack{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:640px;margin:0 auto 38px}
   .stack div{display:flex;justify-content:space-between;padding:13px 22px;border-bottom:1px solid var(--line);font-size:.93rem}
@@ -164,7 +171,7 @@
   .stickybar.show{display:flex}
   .stickybar span{font-size:.85rem}
   @media(max-width:860px){
-    .two,.qual,.tiers,.days,.grid6,.charter{grid-template-columns:1fr}
+    .two,.qual,.tiers,.days,.grid6,.charter,.quotes{grid-template-columns:1fr}
     .proof{grid-template-columns:repeat(2,1fr)}
     nav{display:none}
     .tier.pop{transform:none}
@@ -438,8 +445,28 @@
       <div><b>2</b><small>live sites built in-house</small></div>
     </div>
 
-    <h3 style="margin-bottom:10px">The Founding Cohort</h3>
-    <p class="narrow" style="color:var(--muted);margin-bottom:26px">This is a new programme. Rather than fill this page with quotes we can't stand behind, here's what we're actually offering the first 50 people through the door.</p>
+    <h3 style="margin-bottom:10px">People who have been through it</h3>
+    <p class="narrow" style="color:var(--muted);margin-bottom:26px">Real messages from real attendees, published with their permission and in their own words. Nobody here was paid, and nobody was asked to clean up their English for a sales page.</p>
+    <div class="quotes">
+      <div class="q">
+        <span class="amt">&#8358;120,000</span>
+        <p>&ldquo;Bro, that AI Agent Mastery class no be small thing o. This one dey sweet me well. I don already set up my Telegram bot and I'm testing am now. I even got my first client already (small business owner) and make &#8358;120,000 just this week. Big ups to you for this one. No be work for waste. This thing get future.&#8221;</p>
+        <b>Tunde Adebayo</b><small>AI Agent Mastery alumnus</small>
+      </div>
+      <div class="q">
+        <span class="amt">&#8358;150,000</span>
+        <p>&ldquo;Pastor Victor, this automation part shock me. I used to do plenty things manually, but after the class I set up an automation that handles some of my regular work. I dey save hours every week now. I also got a small job to build something similar for a business and made &#8358;150k from it. I honestly didn't expect to start seeing results this fast.&#8221;</p>
+        <b>Emeka Digital</b><small>AI Agent Mastery alumnus</small>
+      </div>
+      <div class="q">
+        <span class="amt">&#8358;350,000</span>
+        <p>&ldquo;Boss, I just wan say a big thank you for the AI Agent Mastery class. E true say e valuable. I don build my own AI assistant for my freelance biz and I don already make &#8358;350,000 from it this month. This thing really open my eyes o. Thanks again PVK!&#8221;</p>
+        <b>Tife Adeyemi</b><small>Freelance business owner</small>
+      </div>
+    </div>
+
+    <h3 style="margin:46px 0 10px">The Founding Cohort</h3>
+    <p class="narrow" style="color:var(--muted);margin-bottom:26px">The October intake is a new cohort, capped at 50 seats. Here's what the first 50 through the door get.</p>
     <div class="charter">
       <div class="c">
         <h3>Founding pricing, held</h3>
@@ -455,7 +482,7 @@
       </div>
     </div>
     <div class="honest">
-      <b>Why there are no testimonials here yet.</b> Because the first cohort hasn't happened. We'd rather tell you that plainly than borrow somebody else's success stories. When our attendees build their agents, their words will appear here — in their words, with their permission.
+      <b>What those numbers are — and aren't.</b> They're real messages from real attendees, in their own words. They are not a promise: what you make depends on what you build in your own business. What we do guarantee is the build itself. Attend all three evenings, do the work, and if you don't come away with a working agent, we make it right.
     </div>
   </div>
 </section>
