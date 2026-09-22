@@ -125,7 +125,15 @@
   .quotes .q p{font-size:.92rem;color:#33415a;margin:0 0 18px;flex:1}
   .quotes .q b{display:block;font-size:.95rem;color:var(--navy);margin-bottom:2px}
   .quotes .q small{font-size:.8rem;color:var(--muted)}
-  .quotes .tag{font-family:var(--serif);font-size:1.05rem;color:var(--navy);display:block;margin-bottom:10px}
+  .quotes .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.2;color:var(--navy);display:block;margin-bottom:12px}
+  .quotes.two{grid-template-columns:repeat(2,1fr);max-width:860px;margin:0 auto}
+  .minilabel{text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:800;color:var(--navy);opacity:.5;margin:44px 0 16px;text-align:center}
+  .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:860px;margin:0 auto}
+  .shot{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 12px 34px rgba(10,22,40,.08)}
+  .shot img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+  .shot figcaption{padding:13px 5px 4px;text-align:left}
+  .shot figcaption b{display:block;font-size:.95rem;color:var(--navy);margin-bottom:2px}
+  .shot figcaption small{font-size:.8rem;color:var(--muted)}
 
   .stack{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:640px;margin:0 auto 38px}
   .stack div{display:flex;justify-content:space-between;padding:13px 22px;border-bottom:1px solid var(--line);font-size:.93rem}
@@ -174,7 +182,7 @@
   .stickybar.show{display:flex}
   .stickybar span{font-size:.85rem}
   @media(max-width:860px){
-    .two,.qual,.tiers,.days,.grid6,.charter,.quotes{grid-template-columns:1fr}
+    .two,.qual,.tiers,.days,.grid6,.charter,.quotes,.quotes.two,.shots{grid-template-columns:1fr}
     .proof{grid-template-columns:repeat(2,1fr)}
     nav{display:none}
     .tier.pop{transform:none}
@@ -449,22 +457,33 @@
     </div>
 
     <h3 style="margin-bottom:10px">People who have been through it</h3>
-    <p class="narrow" style="color:var(--muted);margin-bottom:26px">Real messages from real attendees, published with their permission and in their own words. Nobody here was paid, and nobody was asked to clean up their English for a sales page.</p>
-    <div class="quotes">
-      <div class="q">
-        <span class="amt">&#8358;120,000</span>
-        <p>&ldquo;Bro, that AI Agent Mastery class no be small thing o. This one dey sweet me well. I don already set up my Telegram bot and I'm testing am now. I even got my first client already (small business owner) and make &#8358;120,000 just this week. Big ups to you for this one. No be work for waste. This thing get future.&#8221;</p>
-        <b>Tunde Adebayo</b><small>AI Agent Mastery alumnus</small>
-      </div>
+    <p class="narrow" style="color:var(--muted);margin-bottom:6px">Not our words — theirs. The two messages below are screenshots taken from our attendees' own phones. One profile photo is blurred at that person's request. Nothing else has been changed and no message has been edited.</p>
+
+    <p class="minilabel">Straight from WhatsApp</p>
+    <div class="shots">
+      <figure class="shot">
+        <img src="img/ss-tife.jpg" width="1184" height="1672" loading="lazy"
+             alt="WhatsApp screenshot from Tife Adeyemi: &ldquo;Boss, I just wan say a big thank you for the AI Agent Mastery class. I don build my own AI assistant for my freelance biz and I don already make &#8358;350,000 from it this month.&#8221;">
+        <figcaption><b>Tife Adeyemi</b><small>Freelance business owner</small></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="img/ss-tunde.jpg" width="1180" height="1612" loading="lazy"
+             alt="WhatsApp screenshot from Tunde Adebayo: &ldquo;I don already set up my Telegram bot and I'm testing am now. I even got my first client already (small business owner) and make &#8358;120,000 just this week.&#8221;">
+        <figcaption><b>Tunde Adebayo</b><small>AI Agent Mastery alumnus</small></figcaption>
+      </figure>
+    </div>
+
+    <p class="minilabel">In their words</p>
+    <div class="quotes two">
       <div class="q">
         <span class="amt">&#8358;150,000</span>
         <p>&ldquo;Pastor Victor, this automation part shock me. I used to do plenty things manually, but after the class I set up an automation that handles some of my regular work. I dey save hours every week now. I also got a small job to build something similar for a business and made &#8358;150k from it. I honestly didn't expect to start seeing results this fast.&#8221;</p>
         <b>Emeka Digital</b><small>AI Agent Mastery alumnus</small>
       </div>
       <div class="q">
-        <span class="amt">&#8358;350,000</span>
-        <p>&ldquo;Boss, I just wan say a big thank you for the AI Agent Mastery class. E true say e valuable. I don build my own AI assistant for my freelance biz and I don already make &#8358;350,000 from it this month. This thing really open my eyes o. Thanks again PVK!&#8221;</p>
-        <b>Tife Adeyemi</b><small>Freelance business owner</small>
+        <span class="tag">&ldquo;A game changer&rdquo;</span>
+        <p>&ldquo;Good morning Pastor Victor, I just want to say a big thank you for this Epitome AI Agency Online Mastery Class. It has been a game changer for me. I never knew AI could be this practical and powerful for my business. Within just a few days, I've already started using the tools you taught us (ChatGPT, automation and content creation) and I can see real results. My work is now faster, more organized and I'm getting more leads. You are truly a blessing, PVK. Your teaching is clear, practical and filled with insight. I appreciate you so much for investing in us and for always making sure we get value. God bless you, sir!&#8221;</p>
+        <b>Chinwe Okafor</b><small>Masterclass attendee</small>
       </div>
     </div>
 
