@@ -151,6 +151,9 @@
   .payrow{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.95rem}
   .payrow span:first-child{opacity:.7}
   .payrow span:last-child{font-weight:700;color:var(--yellow);text-align:right}
+  .payrow .cp{cursor:pointer;border-bottom:1px dashed rgba(245,179,1,.55)}
+  .payrow .cp.done{color:#7ee0a0;border-bottom-color:transparent}
+  .payrow .cph{display:block;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.45);letter-spacing:.05em;text-transform:uppercase;margin-top:3px}
   .paysteps{counter-reset:ps;list-style:none;padding:0;margin:18px 0 0;font-size:.92rem;color:rgba(255,255,255,.85)}
   .paysteps li{counter-increment:ps;padding:8px 0 8px 34px;position:relative}
   .paysteps li:before{content:counter(ps);position:absolute;left:0;top:7px;width:22px;height:22px;border-radius:50%;background:var(--yellow);color:var(--deep);display:grid;place-items:center;font-weight:700;font-size:.76rem}
@@ -560,9 +563,9 @@
       <h3>Bank transfer — secure your seat</h3>
       <p>We bank-transfer only for now. It's instant, there are no processing fees, and you get a human confirmation from us the same day.</p>
       <div class="payrows">
-        <div class="payrow"><span>Bank</span><span>[BANK NAME]</span></div>
-        <div class="payrow"><span>Account name</span><span>Epitome Innovations Global Resources</span></div>
-        <div class="payrow"><span>Account number</span><span>[ACCOUNT NUMBER]</span></div>
+        <div class="payrow"><span>Bank</span><span>Moniepoint MFB</span></div>
+        <div class="payrow"><span>Account name</span><span>Epitome Innovations</span></div>
+        <div class="payrow"><span>Account number</span><span><b class="cp" data-copy="8063166668">8063166668</b><small class="cph">tap to copy</small></span></div>
         <div class="payrow"><span>Amount — The Masterclass</span><span>₦45,000</span></div>
         <div class="payrow"><span>Amount — The Mastery Bundle</span><span>₦150,000</span></div>
         <div class="payrow"><span>Amount — Implementation Seat</span><span>₦450,000</span></div>
@@ -651,6 +654,23 @@ tick(); setInterval(tick, 1000);
 
 const bar = document.getElementById("sbar");
 addEventListener("scroll", () => { bar.classList.toggle("show", scrollY > 900); }, { passive: true });
+
+// tap-to-copy on the account number
+document.querySelectorAll(".cp").forEach(el => {
+  el.addEventListener("click", async () => {
+    const raw = el.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(raw);
+    } catch (e) {
+      const t = document.createElement("textarea");
+      t.value = raw; document.body.appendChild(t); t.select();
+      document.execCommand("copy"); t.remove();
+    }
+    const old = el.textContent;
+    el.textContent = "Copied"; el.classList.add("done");
+    setTimeout(() => { el.textContent = old; el.classList.remove("done"); }, 1500);
+  });
+});
 </script>
 </body>
 </html>
