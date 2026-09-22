@@ -52,7 +52,13 @@
 
   .hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 62%,var(--deep) 100%);color:#fff;padding:70px 0 74px}
   .hero .who{display:flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
-  .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(140deg,var(--yellow),#C99200);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--deep);font-size:1.3rem;flex:none}
+  .avatar{width:66px;height:66px;border-radius:50%;background:linear-gradient(140deg,var(--yellow),#C99200);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--deep);font-size:1.3rem;flex:none;overflow:hidden;border:3px solid var(--yellow);box-shadow:0 8px 22px rgba(0,0,0,.4)}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .teacher{display:grid;grid-template-columns:250px 1fr;gap:30px;align-items:center;text-align:left;max-width:840px;margin:34px auto 10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 12px 34px rgba(10,22,40,.07)}
+  .teacher img{width:100%;height:auto;border-radius:12px;display:block}
+  .teacher h3{margin-bottom:10px}
+  .teacher p{font-size:.95rem;color:var(--muted);margin:0 0 14px}
+  .teacher p:last-child{margin-bottom:0}
   .who b{display:block;font-size:.98rem}
   .who small{opacity:.72;font-size:.82rem}
   .hero h1{color:#fff}
@@ -182,7 +188,7 @@
   .stickybar.show{display:flex}
   .stickybar span{font-size:.85rem}
   @media(max-width:860px){
-    .two,.qual,.tiers,.days,.grid6,.charter,.quotes,.quotes.two,.shots{grid-template-columns:1fr}
+    .two,.qual,.tiers,.days,.grid6,.charter,.quotes,.quotes.two,.shots,.teacher{grid-template-columns:1fr}
     .proof{grid-template-columns:repeat(2,1fr)}
     nav{display:none}
     .tier.pop{transform:none}
@@ -215,7 +221,7 @@
 <section class="hero">
   <div class="wrap">
     <div class="who">
-      <div class="avatar">VK</div>
+      <div class="avatar"><img src="img/victor-avatar.jpg" width="520" height="520" alt="Victor Kehinde, founder and CEO of Epitome Innovations Global Resources"></div>
       <div>
         <b>Victor Kehinde</b>
         <small>Founder &amp; CEO, Epitome Innovations Global Resources (RC 2749585)</small>
@@ -449,11 +455,22 @@
     <p class="label label-dark">Phase 04 — The Proof</p>
     <h2>Who is teaching this</h2>
     <p class="narrow" style="color:var(--muted)">Epitome Innovations is a registered Nigerian company, not a rented landing page. Everything taught here is running in our own business first.</p>
+
+    <div class="teacher">
+      <img src="img/victor-portrait.jpg" width="720" height="900" loading="lazy"
+           alt="Victor Kehinde, founder and CEO of Epitome Innovations Global Resources">
+      <div>
+        <h3>Victor Kehinde</h3>
+        <p>Founder &amp; CEO of Epitome Innovations Global Resources (RC 2749585) — and the person actually teaching you. Every system on this curriculum is one he uses in his own business first: the websites, the automations, the content pipeline. No theory, no borrowed slides.</p>
+        <p>Pastor at LWC Awka and publisher of 55+ videos across his channels. He teaches in plain English, live on screen, with a supervised build session on Day 3.</p>
+      </div>
+    </div>
+
     <div class="proof">
       <div><b>RC 2749585</b><small>Registered company</small></div>
       <div><b>8,600+</b><small>followers across our channels</small></div>
       <div><b>55+</b><small>videos published</small></div>
-      <div><b>2</b><small>live sites built in-house</small></div>
+      <div><b>3</b><small>live sites built in-house</small></div>
     </div>
 
     <h3 style="margin-bottom:10px">People who have been through it</h3>
